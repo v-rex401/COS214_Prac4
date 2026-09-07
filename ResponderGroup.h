@@ -25,7 +25,7 @@ public:
 
 	std::vector<ResponderComponent *> getChildrenForIteration();
 
-	Iterator createIterator(std::string TraversalType);
+	Iterator *createIterator(std::string TraversalType);
 };
 
 #endif

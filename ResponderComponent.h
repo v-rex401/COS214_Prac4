@@ -24,7 +24,7 @@ public:
 
 	virtual std::string getCurrentState();
 
-	virtual Iterator createIterator(std::string TraversalType) = 0;
+	virtual Iterator *createIterator(std::string TraversalType) = 0;
 
 	virtual std::vector<ResponderComponent *> getChildrenForIteration();
 };
