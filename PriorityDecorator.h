@@ -10,6 +10,7 @@ public:
 	PriorityDecorator(ResponderComponent *wrapped);
 
 	void executeAction();
+	~PriorityDecorator();
 };
 
 #endif

@@ -1,11 +1,16 @@
 #include "BiohazardDecorator.h"
+#include <iostream>
 
 BiohazardDecorator::BiohazardDecorator(ResponderComponent* wrapped_) {
-	// TODO - implement BiohazardDecorator::BiohazardDecorator
-	throw "Not yet implemented";
+	wrapped = wrapped_;
 }
 
 void BiohazardDecorator::executeAction() {
-	// TODO - implement BiohazardDecorator::executeAction
-	throw "Not yet implemented";
+	std::cout << "Biohazard Called. Doing biohazard stuff." << std::endl;
+    if (wrapped != nullptr) {
+        wrapped->executeAction();
+    }
+}
+
+BiohazardDecorator::~BiohazardDecorator() {
 }

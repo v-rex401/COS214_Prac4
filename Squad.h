@@ -9,6 +9,8 @@ class Squad : public ResponderGroup
 
 public:
 	Squad(std::string name);
+
+	~Squad();
 };
 
 #endif

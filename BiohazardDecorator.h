@@ -11,6 +11,8 @@ public:
 	BiohazardDecorator(ResponderComponent *wrapped_);
 
 	void executeAction();
+
+	~BiohazardDecorator();
 };
 
 #endif

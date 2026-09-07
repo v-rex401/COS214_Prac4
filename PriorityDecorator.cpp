@@ -1,11 +1,16 @@
 #include "PriorityDecorator.h"
+#include <iostream>
 
 PriorityDecorator::PriorityDecorator(ResponderComponent* wrapped) {
-	// TODO - implement PriorityDecorator::PriorityDecorator
-	throw "Not yet implemented";
+	this->wrapped = wrapped;
 }
 
 void PriorityDecorator::executeAction() {
-	// TODO - implement PriorityDecorator::executeAction
-	throw "Not yet implemented";
+	std::cout << "Priority Called. Prioritizing stuff." << std::endl;
+    if (wrapped != nullptr) {
+        wrapped->executeAction();
+    }
+}
+
+PriorityDecorator::~PriorityDecorator() {
 }
