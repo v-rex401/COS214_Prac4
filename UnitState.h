@@ -4,6 +4,9 @@
 #include "ResponderComponent.h"
 #include <string>
 #include <iostream>
+
+class ResponderComponent; // forward declaration - only used as a pointer below
+
 class UnitState
 {
 

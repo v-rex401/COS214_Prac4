@@ -2,60 +2,78 @@
 #include <string>
 using namespace std;
 
-void ResponderDecorator::add(ResponderComponent* component) {
-	if (wrapped) {
+void ResponderDecorator::add(ResponderComponent *component)
+{
+    if (wrapped)
+    {
         wrapped->add(component);
     }
 }
 
-void ResponderDecorator::remove(ResponderComponent* component) {
-	if (wrapped != nullptr) {
+void ResponderDecorator::remove(ResponderComponent *component)
+{
+    if (wrapped != nullptr)
+    {
         wrapped->remove(component);
     }
 }
 
-string ResponderDecorator::getName() {
-	if (wrapped != nullptr) {
+string ResponderDecorator::getName()
+{
+    if (wrapped != nullptr)
+    {
         return wrapped->getName();
     }
     return "";
 }
 
-void ResponderDecorator::setState(UnitState* newState) {
-	if (wrapped != nullptr) {
+void ResponderDecorator::setState(UnitState *newState)
+{
+    if (wrapped != nullptr)
+    {
         wrapped->setState(newState);
     }
 }
 
-void ResponderDecorator::advanceState() {
-	if (wrapped != nullptr) {
+void ResponderDecorator::advanceState()
+{
+    if (wrapped != nullptr)
+    {
         wrapped->advanceState();
     }
 }
 
-string ResponderDecorator::getCurrentState() {
-	if (wrapped != nullptr) {
+std::string ResponderDecorator::getCurrentState()
+{
+    if (wrapped != nullptr)
+    {
         return wrapped->getCurrentState();
     }
     return "";
 }
 
-vector<ResponderComponent*> ResponderDecorator::getChildrenForIteration() {
-	if (wrapped != nullptr) {
+vector<ResponderComponent *> ResponderDecorator::getChildrenForIteration()
+{
+    if (wrapped != nullptr)
+    {
         return wrapped->getChildrenForIteration();
     }
     return std::vector<ResponderComponent *>();
 }
 
-Iterator* ResponderDecorator::createIterator(std::string TraversalType) {
-    if (wrapped != nullptr) {
+Iterator *ResponderDecorator::createIterator(std::string TraversalType)
+{
+    if (wrapped != nullptr)
+    {
         return wrapped->createIterator(TraversalType);
     }
     return nullptr;
 }
 
-ResponderDecorator::~ResponderDecorator() {
-    if (wrapped != nullptr) {
+ResponderDecorator::~ResponderDecorator()
+{
+    if (wrapped != nullptr)
+    {
         delete wrapped;
         wrapped = nullptr;
     }

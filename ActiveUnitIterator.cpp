@@ -37,7 +37,7 @@ void ActiveUnitIterator::collect(ResponderComponent *node)
 	if (children.empty())
 	{
 		// If its empty we have a leaf of the tree ResponderUnit
-		if (node->getCurrentState()->getStateName() != "Contained")
+		if (node->getCurrentState() != "Contained")
 		{
 			components.push_back(node);
 		}

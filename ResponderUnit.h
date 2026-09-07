@@ -25,9 +25,11 @@ public:
 
 	void advanceState();
 
-	UnitState *getCurrentState();
+	std::string getCurrentState();
 
 	std::vector<ResponderComponent *> getChildrenForIteration();
+
+	Iterator *createIterator(std::string TraversalType);
 
 	~ResponderUnit();
 };

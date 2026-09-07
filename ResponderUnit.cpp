@@ -1,4 +1,6 @@
 #include "ResponderUnit.h"
+#include "DFSIterator.h"
+#include "ActiveUnitIterator.h"
 
 ResponderUnit::ResponderUnit(std::string name)
 {
@@ -12,7 +14,7 @@ void ResponderUnit::executeAction()
 
 std::string ResponderUnit::getName()
 {
-	return this->name;
+	return name;
 }
 
 void ResponderUnit::setState(UnitState *newState)
@@ -27,9 +29,9 @@ void ResponderUnit::advanceState()
 	currentState->handleStateChange(this);
 }
 
-UnitState *ResponderUnit::getCurrentState()
+std::string ResponderUnit::getCurrentState()
 {
-	return currentState;
+	return currentState->getStateName();
 }
 
 std::vector<ResponderComponent *> ResponderUnit::getChildrenForIteration()
@@ -41,4 +43,17 @@ ResponderUnit::~ResponderUnit()
 {
 	if (currentState != nullptr)
 		delete currentState;
+}
+
+Iterator *ResponderUnit::createIterator(std::string TraversalType)
+{
+	if (TraversalType == "DFS")
+	{
+		return new DFSIterator(this);
+	}
+	else if (TraversalType == "Active")
+	{
+		return new ActiveUnitIterator(this);
+	}
+	return nullptr;
 }
