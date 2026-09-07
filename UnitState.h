@@ -3,6 +3,7 @@
 
 #include "ResponderComponent.h"
 #include <string>
+#include <iostream>
 class UnitState
 {
 

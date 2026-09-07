@@ -5,7 +5,7 @@
 #include "ResponderComponent.h"
 #include <string>
 
-class EnRouteState : UnitState
+class EnRouteState : public UnitState
 {
 
 public:

@@ -1,11 +1,13 @@
 #include "OnSceneState.h"
+#include "ContainedState.h"
 
 void OnSceneState::handleStateChange(ResponderComponent* context) {
-	// TODO - implement OnSceneState::handleStateChange
-	throw "Not yet implemented";
+
+    std::cout << " [State] " << context->getName() << " has finished working the scene. The incident is now Contained.\n";
+    
+	context->setState(new ContainedState());
 }
 
-string OnSceneState::getStateName() {
-	// TODO - implement OnSceneState::getStateName
-	throw "Not yet implemented";
+std::string OnSceneState::getStateName() {
+	return "On Scene";
 }

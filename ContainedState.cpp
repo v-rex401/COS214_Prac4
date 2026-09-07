@@ -1,11 +1,10 @@
 #include "ContainedState.h"
 
 void ContainedState::handleStateChange(ResponderComponent* context) {
-	// TODO - implement ContainedState::handleStateChange
-	throw "Not yet implemented";
+	
+	    std::cout << " [State] Invalid State Change: " << context->getName() << " is already Contained.\n";
 }
 
-string ContainedState::getStateName() {
-	// TODO - implement ContainedState::getStateName
-	throw "Not yet implemented";
+std::string ContainedState::getStateName() {
+	return "Contained";
 }

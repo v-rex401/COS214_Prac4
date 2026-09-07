@@ -5,7 +5,7 @@
 #include "ResponderComponent.h"
 #include <string>
 
-class DispatchedState : UnitState
+class DispatchedState : public UnitState
 {
 
 public:

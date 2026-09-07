@@ -1,11 +1,13 @@
 #include "DispatchedState.h"
+#include "EnRouteState.h"
 
 void DispatchedState::handleStateChange(ResponderComponent* context) {
-	// TODO - implement DispatchedState::handleStateChange
-	throw "Not yet implemented";
+
+	std::cout << " [State] " << context->getName() << " has left base and is now En Route.\n";
+
+	context->setState(new EnRouteState());
 }
 
-string DispatchedState::getStateName() {
-	// TODO - implement DispatchedState::getStateName
-	throw "Not yet implemented";
+std::string DispatchedState::getStateName() {
+	return "Dispatched";
 }
