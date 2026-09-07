@@ -1,21 +1,38 @@
 #include "DFSIterator.h"
+#include <iostream>
 
-DFSIterator::DFSIterator(ResponderComponent* root) {
-	// TODO - implement DFSIterator::DFSIterator
-	throw "Not yet implemented";
+DFSIterator::DFSIterator(ResponderComponent *root)
+{
+	if (root != nullptr)
+	{
+		collect(root); // start the traversal
+	}
 }
 
-bool DFSIterator::hasNext() {
-	// TODO - implement DFSIterator::hasNext
-	throw "Not yet implemented";
+bool DFSIterator::hasNext()
+{
+	if (currentIndex < components.size())
+	{
+		return true;
+	}
+	return false;
 }
 
-ResponderComponent* DFSIterator::next() {
-	// TODO - implement DFSIterator::next
-	throw "Not yet implemented";
+ResponderComponent *DFSIterator::next()
+{
+	if (!hasNext())
+	{
+		std::cout << "End reached, no element here";
+		return nullptr;
+	}
+	return components[currentIndex++]; // return the next component and increment index of traversal
 }
 
-void DFSIterator::collect(ResponderComponent* node) {
-	// TODO - implement DFSIterator::collect
-	throw "Not yet implemented";
+void DFSIterator::collect(ResponderComponent *node)
+{
+	components.push_back(node);
+	for (ResponderComponent *child : node->getChildrenForIteration())
+	{
+		collect(child); // recursively go through tree
+	}
 }
