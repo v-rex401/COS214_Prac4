@@ -38,8 +38,6 @@ void scenario1()
     ResponderUnit *medic4 = new ResponderUnit("Medic 4");
     medic4->setState(new DispatchedState());
 
-    // TODO Add wrappers for decorator to medic4
-
     ResponderUnit *tanker67 = new ResponderUnit("Tanker 67");
     medic4->setState(new EnRouteState());
 
