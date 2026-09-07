@@ -29,7 +29,8 @@ ResponderComponent *DFSIterator::next()
 
 void DFSIterator::collect(ResponderComponent *node)
 {
-	if (node == nullptr){
+	if (node == nullptr)
+	{
 		return;
 	}
 	components.push_back(node);

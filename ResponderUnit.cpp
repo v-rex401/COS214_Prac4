@@ -10,7 +10,7 @@ ResponderUnit::ResponderUnit(std::string name)
 
 void ResponderUnit::executeAction()
 {
-	std::cout << "This unit is doing something" << std::endl;
+	std::cout << "[LEAF] " << name << " is active. Current state: " << getCurrentState() << std::endl;
 }
 
 std::string ResponderUnit::getName()
@@ -20,8 +20,9 @@ std::string ResponderUnit::getName()
 
 void ResponderUnit::setState(UnitState *newState)
 {
-	if (currentState != nullptr) {
-        delete currentState; // Prevent memory leak of old state
+	if (currentState != nullptr)
+	{
+		delete currentState; // Prevent memory leak of old state
 	}
 	std::cout << "Changing state to: " << newState->getStateName() << std::endl;
 	currentState = newState;
@@ -35,7 +36,11 @@ void ResponderUnit::advanceState()
 
 std::string ResponderUnit::getCurrentState()
 {
-	return currentState->getStateName();
+	if (currentState != nullptr)
+	{
+		return currentState->getStateName();
+	}
+	return "No State Assigned";
 }
 
 std::vector<ResponderComponent *> ResponderUnit::getChildrenForIteration()
@@ -47,7 +52,7 @@ ResponderUnit::~ResponderUnit()
 {
 	if (currentState != nullptr)
 		delete currentState;
-		currentState = nullptr;
+	currentState = nullptr;
 }
 
 Iterator *ResponderUnit::createIterator(std::string TraversalType)

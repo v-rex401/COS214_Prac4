@@ -2,6 +2,7 @@
 
 ActiveUnitIterator::ActiveUnitIterator(ResponderComponent *root)
 {
+	currentIndex = 0;
 	if (root != nullptr)
 	{
 		collect(root);
@@ -10,14 +11,7 @@ ActiveUnitIterator::ActiveUnitIterator(ResponderComponent *root)
 
 bool ActiveUnitIterator::hasNext()
 {
-	if (!components.empty())
-	{
-		if (components[currentIndex + 1] != nullptr)
-		{
-			return true;
-		}
-	}
-	return false;
+	return currentIndex < components.size();
 }
 
 ResponderComponent *ActiveUnitIterator::next()

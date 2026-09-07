@@ -8,13 +8,20 @@ ResponderGroup::ResponderGroup(std::string name) : name(name) {}
 
 void ResponderGroup::executeAction()
 {
-	for (int i = 0; i < children.size(); i++)
+	std::cout << "\n--> Entering " << name << " " << std::endl;
+
+	/**Removed the following code because it was iterating twice
+	 * - With it gone only iterator design pattern will handle the traversal
+	 * - It was causing the leaves to execute too many times  */
+
+	/* for (int i = 0; i < children.size(); i++)
 	{
 		if (children[i] != nullptr)
 		{
 			children[i]->executeAction();
 		}
 	}
+	std::cout << std::endl; */
 }
 
 void ResponderGroup::add(ResponderComponent *component)
