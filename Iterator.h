@@ -18,7 +18,7 @@ public:
 
 	virtual ResponderComponent *next() = 0;
 
-	std::vector<ResponderComponent *> getSnapshot();
+	virtual std::vector<ResponderComponent *> getSnapshot();
 };
 
 #endif
