@@ -1,6 +1,6 @@
 #include "EmergencyResponse.h"
 
-EmergencyResponse::EmergencyResponse(string name) {
-	// TODO - implement EmergencyResponse::EmergencyResponse
-	throw "Not yet implemented";
+EmergencyResponse::EmergencyResponse(std::string name) : ResponderGroup(name) {}
+
+EmergencyResponse::~EmergencyResponse() {
 }

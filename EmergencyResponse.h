@@ -9,6 +9,7 @@ class EmergencyResponse : public ResponderGroup
 
 public:
 	EmergencyResponse(std::string name);
+	~EmergencyResponse();
 };
 
 #endif

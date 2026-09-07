@@ -1,36 +1,62 @@
 #include "ResponderDecorator.h"
+#include <string>
+using namespace std;
 
 void ResponderDecorator::add(ResponderComponent* component) {
-	// TODO - implement ResponderDecorator::add
-	throw "Not yet implemented";
+	if (wrapped) {
+        wrapped->add(component);
+    }
 }
 
-void* ResponderDecorator::remove(ResponderComponent component) {
-	// TODO - implement ResponderDecorator::remove
-	throw "Not yet implemented";
+void ResponderDecorator::remove(ResponderComponent* component) {
+	if (wrapped != nullptr) {
+        wrapped->remove(component);
+    }
 }
 
 string ResponderDecorator::getName() {
-	// TODO - implement ResponderDecorator::getName
-	throw "Not yet implemented";
+	if (wrapped != nullptr) {
+        return wrapped->getName();
+    }
+    return "";
 }
 
 void ResponderDecorator::setState(UnitState* newState) {
-	// TODO - implement ResponderDecorator::setState
-	throw "Not yet implemented";
+	if (wrapped != nullptr) {
+        wrapped->setState(newState);
+    }
 }
 
 void ResponderDecorator::advanceState() {
-	// TODO - implement ResponderDecorator::advanceState
-	throw "Not yet implemented";
+	if (wrapped != nullptr) {
+        wrapped->advanceState();
+    }
 }
 
 string ResponderDecorator::getCurrentState() {
-	// TODO - implement ResponderDecorator::getCurrentState
-	throw "Not yet implemented";
+	if (wrapped != nullptr) {
+        return wrapped->getCurrentState();
+    }
+    return "";
 }
 
 vector<ResponderComponent*> ResponderDecorator::getChildrenForIteration() {
-	// TODO - implement ResponderDecorator::getChildrenForIteration
-	throw "Not yet implemented";
+	if (wrapped != nullptr) {
+        return wrapped->getChildrenForIteration();
+    }
+    return std::vector<ResponderComponent *>();
+}
+
+Iterator* ResponderDecorator::createIterator(std::string TraversalType) {
+    if (wrapped != nullptr) {
+        return wrapped->createIterator(TraversalType);
+    }
+    return nullptr;
+}
+
+ResponderDecorator::~ResponderDecorator() {
+    if (wrapped != nullptr) {
+        delete wrapped;
+        wrapped = nullptr;
+    }
 }
