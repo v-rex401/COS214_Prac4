@@ -12,21 +12,21 @@ class ResponderComponent
 public:
 	void executeAction();
 
-	void add(ResponderComponent *component);
+	virtual void add(ResponderComponent *component);
 
-	void *remove(ResponderComponent component);
+	virtual void remove(ResponderComponent *component);
 
 	virtual std::string getName() = 0;
 
-	void setState(UnitState *newState);
+	virtual void setState(UnitState *newState);
 
-	void advanceState();
+	virtual void advanceState();
 
-	std::string getCurrentState();
+	virtual std::string getCurrentState();
 
 	virtual Iterator createIterator(std::string TraversalType) = 0;
 
-	std::vector<ResponderComponent *> getChildrenForIteration();
+	virtual std::vector<ResponderComponent *> getChildrenForIteration();
 };
 
 #endif

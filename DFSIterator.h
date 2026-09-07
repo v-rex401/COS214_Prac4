@@ -15,6 +15,8 @@ public:
 	ResponderComponent *next();
 
 private:
+	int currentIndex;
+	std::vector<ResponderComponent *> components;
 	void collect(ResponderComponent *node);
 };
 
