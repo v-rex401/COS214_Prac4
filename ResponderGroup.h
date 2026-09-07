@@ -24,8 +24,14 @@ public:
 	std::string getName();
 
 	std::vector<ResponderComponent *> getChildrenForIteration();
-	
-	Iterator* createIterator(std::string TraversalType);
+
+	Iterator *createIterator(std::string TraversalType);
+
+	void setState(UnitState *newState);
+
+	void advanceState();
+
+	std::string getCurrentState();
 
 	~ResponderGroup();
 };

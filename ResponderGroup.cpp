@@ -77,3 +77,29 @@ ResponderGroup::~ResponderGroup()
 	}
 	children.clear();
 }
+
+void ResponderGroup::setState(UnitState *newState)
+{
+	// got through children and call
+	for (int i = 0; i < children.size(); i++)
+	{
+		children[i]->setState(newState);
+	}
+}
+
+void ResponderGroup::advanceState()
+{
+	// got through children and call
+	for (int i = 0; i < children.size(); i++)
+	{
+		children[i]->advanceState();
+	}
+}
+std::string ResponderGroup::getCurrentState()
+{
+	for (int i = 0; i < children.size(); i++)
+	{
+		children[i]->getCurrentState();
+	}
+	return "End of: " + name;
+}
