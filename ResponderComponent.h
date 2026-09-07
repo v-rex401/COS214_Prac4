@@ -1,27 +1,32 @@
 #ifndef RESPONDERCOMPONENT_H
 #define RESPONDERCOMPONENT_H
 
-class ResponderComponent {
+#include <string>
+#include "UnitState.h"
+#include "Iterator.h"
+#include <vector>
 
+class ResponderComponent
+{
 
 public:
 	void executeAction();
 
-	void add(ResponderComponent* component);
+	void add(ResponderComponent *component);
 
-	void* remove(ResponderComponent component);
+	void *remove(ResponderComponent component);
 
-	virtual string getName() = 0;
+	virtual std::string getName() = 0;
 
-	void setState(UnitState* newState);
+	void setState(UnitState *newState);
 
 	void advanceState();
 
-	string getCurrentState();
+	std::string getCurrentState();
 
-	virtual Iterator createIterator(string TraversalType) = 0;
+	virtual Iterator createIterator(std::string TraversalType) = 0;
 
-	vector<ResponderComponent*> getChildrenForIteration();
+	std::vector<ResponderComponent *> getChildrenForIteration();
 };
 
 #endif

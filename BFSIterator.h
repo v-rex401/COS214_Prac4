@@ -1,15 +1,18 @@
 #ifndef BFSITERATOR_H
 #define BFSITERATOR_H
 
-class BFSIterator : Iterator {
+#include "Iterator.h"
+#include "ResponderComponent.h"
 
+class BFSIterator : public Iterator
+{
 
 public:
-	BFSIterator(ResponderComponent* root);
+	BFSIterator(ResponderComponent *root);
 
 	bool hasNext();
 
-	ResponderComponent* next();
+	ResponderComponent *next();
 };
 
 #endif

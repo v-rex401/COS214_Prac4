@@ -1,11 +1,14 @@
 #ifndef EMERGENCYRESPONSE_H
 #define EMERGENCYRESPONSE_H
 
-class EmergencyResponse : ResponderGroup {
+#include <string>
+#include "ResponderGroup.h"
 
+class EmergencyResponse : public ResponderGroup
+{
 
 public:
-	EmergencyResponse(string name);
+	EmergencyResponse(std::string name);
 };
 
 #endif

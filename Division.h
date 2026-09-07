@@ -1,11 +1,13 @@
 #ifndef DIVISION_H
 #define DIVISION_H
 
-class Division : ResponderGroup {
-
+#include "ResponderGroup.h"
+#include <string>
+class Division : public ResponderGroup
+{
 
 public:
-	Division(string name);
+	Division(std::string name);
 };
 
 #endif

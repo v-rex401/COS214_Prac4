@@ -1,18 +1,24 @@
 #ifndef ITERATOR_H
 #define ITERATOR_H
 
-class Iterator {
+#include <vector>
+#include <string>
+#include "ResponderComponent.h"
+
+class Iterator
+{
 
 private:
-	vector<ResponderComponent*> snapshot;
+	std::vector<ResponderComponent *> snapshot;
+
 public:
 	int index;
 
 	virtual bool hasNext() = 0;
 
-	virtual ResponderComponent* next() = 0;
+	virtual ResponderComponent *next() = 0;
 
-	vector<ResponderComponent*> getSnapshot();
+	std::vector<ResponderComponent *> getSnapshot();
 };
 
 #endif

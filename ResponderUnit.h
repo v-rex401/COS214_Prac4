@@ -1,26 +1,31 @@
 #ifndef RESPONDERUNIT_H
 #define RESPONDERUNIT_H
 
-class ResponderUnit : ResponderComponent {
+#include "ResponderComponent.h"
+#include <string>
+#include <vector>
+
+class ResponderUnit : public ResponderComponent
+{
 
 private:
-	string name;
-	UnitState currentState;
+	std::string name;
+	UnitState *currentState;
 
 public:
-	ResponderUnit(string name);
+	ResponderUnit(std::string name);
 
 	void executeAction();
 
-	string getName();
+	std::string getName();
 
-	void setState(UnitState* newState);
+	void setState(UnitState *newState);
 
 	void advanceState();
 
-	string getCurrentState();
+	std::string getCurrentState();
 
-	vector<ResponderComponent*> getChildrenForIteration();
+	std::vector<ResponderComponent *> getChildrenForIteration();
 };
 
 #endif

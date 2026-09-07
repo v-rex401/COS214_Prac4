@@ -1,11 +1,13 @@
 #ifndef PRIORITYDECORATOR_H
 #define PRIORITYDECORATOR_H
 
-class PriorityDecorator : ResponderDecorator {
-
+#include "ResponderDecorator.h"
+#include "ResponderComponent.h"
+class PriorityDecorator : public ResponderDecorator
+{
 
 public:
-	PriorityDecorator(ResponderComponent* wrapped);
+	PriorityDecorator(ResponderComponent *wrapped);
 
 	void executeAction();
 };

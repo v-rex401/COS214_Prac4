@@ -1,17 +1,20 @@
 #ifndef ACTIVEUNITITERATOR_H
 #define ACTIVEUNITITERATOR_H
 
-class ActiveUnitIterator : Iterator {
+#include "Iterator.h"
+#include "ResponderComponent.h"
 
+class ActiveUnitIterator : public Iterator
+{
 
 public:
-	ActiveUnitIterator(ResponderComponent* root);
+	ActiveUnitIterator(ResponderComponent *root);
 
 	bool hasNext();
 
-	ResponderComponent* next();
+	ResponderComponent *next();
 
-	void collect(ResponderComponent* node);
+	void collect(ResponderComponent *node);
 };
 
 #endif

@@ -1,11 +1,14 @@
 #ifndef SQUAD_H
 #define SQUAD_H
 
-class Squad : ResponderGroup {
+#include "ResponderGroup.h"
+#include <string>
 
+class Squad : public ResponderGroup
+{
 
 public:
-	Squad(string name);
+	Squad(std::string name);
 };
 
 #endif

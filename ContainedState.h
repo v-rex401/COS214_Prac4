@@ -1,13 +1,17 @@
 #ifndef CONTAINEDSTATE_H
 #define CONTAINEDSTATE_H
 
-class ContainedState : UnitState {
+#include "UnitState.h"
+#include "ResponderComponent.h"
+#include <string>
 
+class ContainedState : public UnitState
+{
 
 public:
-	void handleStateChange(ResponderComponent* context);
+	void handleStateChange(ResponderComponent *context);
 
-	string getStateName();
+	std::string getStateName();
 };
 
 #endif

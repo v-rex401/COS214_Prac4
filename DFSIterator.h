@@ -1,18 +1,21 @@
 #ifndef DFSITERATOR_H
 #define DFSITERATOR_H
 
-class DFSIterator : Iterator {
+#include "Iterator.h"
+#include "ResponderComponent.h"
 
+class DFSIterator : public Iterator
+{
 
 public:
-	DFSIterator(ResponderComponent* root);
+	DFSIterator(ResponderComponent *root);
 
 	bool hasNext();
 
-	ResponderComponent* next();
+	ResponderComponent *next();
 
 private:
-	void collect(ResponderComponent* node);
+	void collect(ResponderComponent *node);
 };
 
 #endif

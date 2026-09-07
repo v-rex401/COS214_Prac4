@@ -1,13 +1,17 @@
 #ifndef ONSCENESTATE_H
 #define ONSCENESTATE_H
 
-class OnSceneState : UnitState {
+#include "UnitState.h"
+#include "ResponderComponent.h"
+#include <string>
 
+class OnSceneState : public UnitState
+{
 
 public:
-	void handleStateChange(ResponderComponent* context);
+	void handleStateChange(ResponderComponent *context);
 
-	string getStateName();
+	std::string getStateName();
 };
 
 #endif

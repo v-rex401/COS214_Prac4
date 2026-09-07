@@ -1,13 +1,17 @@
 #ifndef ENROUTESTATE_H
 #define ENROUTESTATE_H
 
-class EnRouteState : UnitState {
+#include "UnitState.h"
+#include "ResponderComponent.h"
+#include <string>
 
+class EnRouteState : UnitState
+{
 
 public:
-	void handleStateChange(ResponderComponent* context);
+	void handleStateChange(ResponderComponent *context);
 
-	string getStateName();
+	std::string getStateName();
 };
 
 #endif

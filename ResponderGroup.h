@@ -1,24 +1,29 @@
 #ifndef RESPONDERGROUP_H
 #define RESPONDERGROUP_H
 
-class ResponderGroup : ResponderComponent {
+#include <string>
+#include <vector>
+#include "ResponderComponent.h"
+
+class ResponderGroup : public ResponderComponent
+{
 
 private:
-	string name;
-	std::vector<vector<ResponderComponent*>> children;
+	std::string name;
+	std::vector<ResponderComponent *> children;
 
 public:
-	ResponderGroup(string name);
+	ResponderGroup(std::string name);
 
 	void executeAction();
 
-	void add(ResponderComponent* component);
+	void add(ResponderComponent *component);
 
-	void* remove(ResponderComponent component);
+	void *remove(ResponderComponent component);
 
-	string getName();
+	std::string getName();
 
-	vector<ResponderComponent*> getChildrenForIteration();
+	std::vector<ResponderComponent *> getChildrenForIteration();
 };
 
 #endif

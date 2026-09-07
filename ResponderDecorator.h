@@ -1,24 +1,27 @@
 #ifndef RESPONDERDECORATOR_H
 #define RESPONDERDECORATOR_H
 
-class ResponderDecorator : ResponderComponent {
+#include "ResponderComponent.h"
+#include <string>
+class ResponderDecorator : public ResponderComponent
+{
 
 public:
-	ResponderComponent* wrapped;
+	ResponderComponent *wrapped;
 
-	void add(ResponderComponent* component);
+	void add(ResponderComponent *component);
 
-	void* remove(ResponderComponent component);
+	void *remove(ResponderComponent component);
 
-	string getName();
+	std::string getName();
 
-	void setState(UnitState* newState);
+	void setState(UnitState *newState);
 
 	void advanceState();
 
-	string getCurrentState();
+	std::string getCurrentState();
 
-	vector<ResponderComponent*> getChildrenForIteration();
+	std::vector<ResponderComponent *> getChildrenForIteration();
 };
 
 #endif

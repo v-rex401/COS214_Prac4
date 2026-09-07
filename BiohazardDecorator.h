@@ -1,11 +1,14 @@
 #ifndef BIOHAZARDDECORATOR_H
 #define BIOHAZARDDECORATOR_H
 
-class BiohazardDecorator : ResponderDecorator {
+#include "ResponderDecorator.h"
+#include "ResponderComponent.h"
 
+class BiohazardDecorator : public ResponderDecorator
+{
 
 public:
-	BiohazardDecorator(ResponderComponent* wrapped_);
+	BiohazardDecorator(ResponderComponent *wrapped_);
 
 	void executeAction();
 };

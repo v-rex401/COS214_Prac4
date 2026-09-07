@@ -1,13 +1,17 @@
 #ifndef DISPATCHEDSTATE_H
 #define DISPATCHEDSTATE_H
 
-class DispatchedState : UnitState {
+#include "UnitState.h"
+#include "ResponderComponent.h"
+#include <string>
 
+class DispatchedState : UnitState
+{
 
 public:
-	void handleStateChange(ResponderComponent* context);
+	void handleStateChange(ResponderComponent *context);
 
-	string getStateName();
+	std::string getStateName();
 };
 
 #endif
