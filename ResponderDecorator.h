@@ -11,7 +11,7 @@ public:
 
 	void add(ResponderComponent *component);
 
-	void *remove(ResponderComponent component);
+	void remove(ResponderComponent *component);
 
 	std::string getName();
 
@@ -22,6 +22,8 @@ public:
 	std::string getCurrentState();
 
 	std::vector<ResponderComponent *> getChildrenForIteration();
+
+	Iterator createIterator(std::string TraversalType);
 };
 
 #endif

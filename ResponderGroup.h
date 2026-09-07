@@ -19,11 +19,13 @@ public:
 
 	void add(ResponderComponent *component);
 
-	void *remove(ResponderComponent component);
+	void remove(ResponderComponent *component);
 
 	std::string getName();
 
 	std::vector<ResponderComponent *> getChildrenForIteration();
+
+	Iterator createIterator(std::string TraversalType);
 };
 
 #endif
