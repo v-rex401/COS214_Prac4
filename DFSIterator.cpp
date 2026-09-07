@@ -11,9 +11,12 @@ DFSIterator::DFSIterator(ResponderComponent *root)
 
 bool DFSIterator::hasNext()
 {
-	if (currentIndex < components.size())
+	if (!components.empty())
 	{
-		return true;
+		if (components[currentIndex + 1] != nullptr)
+		{
+			return true;
+		}
 	}
 	return false;
 }

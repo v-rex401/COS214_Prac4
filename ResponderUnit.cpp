@@ -1,35 +1,44 @@
 #include "ResponderUnit.h"
 
-ResponderUnit::ResponderUnit(string name) {
-	// TODO - implement ResponderUnit::ResponderUnit
-	throw "Not yet implemented";
+ResponderUnit::ResponderUnit(std::string name)
+{
+	this->name = name;
 }
 
-void ResponderUnit::executeAction() {
-	// TODO - implement ResponderUnit::executeAction
-	throw "Not yet implemented";
+void ResponderUnit::executeAction()
+{
+	std::cout << "This unit is doing something" << std::endl;
 }
 
-string ResponderUnit::getName() {
+std::string ResponderUnit::getName()
+{
 	return this->name;
 }
 
-void ResponderUnit::setState(UnitState* newState) {
-	// TODO - implement ResponderUnit::setState
-	throw "Not yet implemented";
+void ResponderUnit::setState(UnitState *newState)
+{
+	std::cout << "Changing state to: " << newState->getStateName() << std::endl;
+	currentState = newState;
 }
 
-void ResponderUnit::advanceState() {
-	// TODO - implement ResponderUnit::advanceState
-	throw "Not yet implemented";
+void ResponderUnit::advanceState()
+{
+	// Set the new state
+	currentState->handleStateChange(this);
 }
 
-string ResponderUnit::getCurrentState() {
-	// TODO - implement ResponderUnit::getCurrentState
-	throw "Not yet implemented";
+UnitState *ResponderUnit::getCurrentState()
+{
+	return currentState;
 }
 
-vector<ResponderComponent*> ResponderUnit::getChildrenForIteration() {
-	// TODO - implement ResponderUnit::getChildrenForIteration
-	throw "Not yet implemented";
+std::vector<ResponderComponent *> ResponderUnit::getChildrenForIteration()
+{
+	return children;
+}
+
+ResponderUnit::~ResponderUnit()
+{
+	if (currentState != nullptr)
+		delete currentState;
 }

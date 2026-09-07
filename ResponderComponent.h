@@ -22,11 +22,12 @@ public:
 
 	virtual void advanceState();
 
-	virtual std::string getCurrentState();
+	virtual UnitState *getCurrentState();
 
-	virtual Iterator createIterator(std::string TraversalType) = 0;
+	virtual Iterator *createIterator(std::string TraversalType) = 0;
 
 	virtual std::vector<ResponderComponent *> getChildrenForIteration();
+	virtual ~ResponderComponent();
 };
 
 #endif

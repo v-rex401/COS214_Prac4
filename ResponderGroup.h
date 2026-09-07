@@ -15,7 +15,7 @@ private:
 public:
 	ResponderGroup(std::string name);
 
-	void executeAction();
+	virtual void executeAction();
 
 	void add(ResponderComponent *component);
 
@@ -25,7 +25,7 @@ public:
 
 	std::vector<ResponderComponent *> getChildrenForIteration();
 
-	Iterator createIterator(std::string TraversalType);
+	Iterator *createIterator(std::string TraversalType);
 };
 
 #endif

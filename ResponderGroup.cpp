@@ -1,30 +1,36 @@
 #include "ResponderGroup.h"
 
-ResponderGroup::ResponderGroup(string name) {
+ResponderGroup::ResponderGroup(std::string name)
+{
 	// TODO - implement ResponderGroup::ResponderGroup
 	throw "Not yet implemented";
 }
 
-void ResponderGroup::executeAction() {
+void ResponderGroup::executeAction()
+{
 	// TODO - implement ResponderGroup::executeAction
 	throw "Not yet implemented";
 }
 
-void ResponderGroup::add(ResponderComponent* component) {
+void ResponderGroup::add(ResponderComponent *component)
+{
 	// TODO - implement ResponderGroup::add
 	throw "Not yet implemented";
 }
 
-void* ResponderGroup::remove(ResponderComponent component) {
+void ResponderGroup::remove(ResponderComponent *component)
+{
 	// TODO - implement ResponderGroup::remove
 	throw "Not yet implemented";
 }
 
-string ResponderGroup::getName() {
+std::string ResponderGroup::getName()
+{
 	return this->name;
 }
 
-vector<ResponderComponent*> ResponderGroup::getChildrenForIteration() {
+std::vector<ResponderComponent *> ResponderGroup::getChildrenForIteration()
+{
 	// TODO - implement ResponderGroup::getChildrenForIteration
 	throw "Not yet implemented";
 }
