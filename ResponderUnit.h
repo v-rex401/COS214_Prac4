@@ -2,6 +2,7 @@
 #define RESPONDERUNIT_H
 
 #include "ResponderComponent.h"
+#include "UnitState.h"
 #include <string>
 #include <vector>
 
@@ -23,7 +24,7 @@ public:
 
 	void advanceState();
 
-	std::string getCurrentState();
+	UnitState *getCurrentState();
 
 	std::vector<ResponderComponent *> getChildrenForIteration();
 };
