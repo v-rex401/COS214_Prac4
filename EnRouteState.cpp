@@ -1,11 +1,13 @@
 #include "EnRouteState.h"
+#include "OnSceneState.h"
 
 void EnRouteState::handleStateChange(ResponderComponent* context) {
-	// TODO - implement EnRouteState::handleStateChange
-	throw "Not yet implemented";
+
+	std::cout << " [State] " << context->getName() << " has arrived and is now On Scene.\n";
+
+    context->setState(new OnSceneState());
 }
 
-string EnRouteState::getStateName() {
-	// TODO - implement EnRouteState::getStateName
-	throw "Not yet implemented";
+std::string EnRouteState::getStateName() {
+	return "En Route";
 }
