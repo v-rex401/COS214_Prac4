@@ -27,6 +27,7 @@ public:
 	virtual Iterator *createIterator(std::string TraversalType) = 0;
 
 	virtual std::vector<ResponderComponent *> getChildrenForIteration();
+	virtual ~ResponderComponent();
 };
 
 #endif
