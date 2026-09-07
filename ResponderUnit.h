@@ -27,6 +27,8 @@ public:
 	UnitState *getCurrentState();
 
 	std::vector<ResponderComponent *> getChildrenForIteration();
+
+	~ResponderUnit();
 };
 
 #endif
