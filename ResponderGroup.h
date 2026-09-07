@@ -15,7 +15,7 @@ private:
 public:
 	ResponderGroup(std::string name);
 
-	void executeAction();
+	virtual void executeAction();
 
 	void add(ResponderComponent *component);
 
