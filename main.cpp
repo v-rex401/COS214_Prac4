@@ -42,7 +42,7 @@ int main()
     ResponderUnit *engine21 = new ResponderUnit("Engine 21");
     engine21->setState(new OnSceneState());
     ResponderUnit *ladderTruck42 = new ResponderUnit("Ladder Truck 42");
-    engine21->setState(new DispatchedState());
+    ladderTruck42->setState(new DispatchedState());
 
     Squad *fireSquad1 = new Squad("Fire Squad 1");
     fireSquad1->add(engine21);

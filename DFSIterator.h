@@ -9,7 +9,7 @@ class DFSIterator : public Iterator
 
 public:
 	DFSIterator(ResponderComponent *root);
-
+	virtual ~DFSIterator();
 	bool hasNext();
 
 	ResponderComponent *next();

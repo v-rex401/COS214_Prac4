@@ -33,7 +33,7 @@ public:
 
 	std::string getCurrentState();
 
-	~ResponderGroup();
+	virtual ~ResponderGroup();
 };
 
 #endif
