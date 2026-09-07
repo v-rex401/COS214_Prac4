@@ -25,7 +25,7 @@ public:
 
 	Iterator *createIterator(std::string TraversalType);
 
-	~ResponderDecorator();
+	virtual ~ResponderDecorator();
 };
 
 #endif

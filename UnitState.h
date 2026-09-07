@@ -14,6 +14,8 @@ public:
 	virtual void handleStateChange(ResponderComponent *context) = 0;
 
 	virtual std::string getStateName() = 0;
+
+	virtual ~UnitState(){};
 };
 
 #endif

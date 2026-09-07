@@ -5,6 +5,7 @@
 ResponderUnit::ResponderUnit(std::string name)
 {
 	this->name = name;
+	currentState = nullptr;
 }
 
 void ResponderUnit::executeAction()
@@ -19,6 +20,9 @@ std::string ResponderUnit::getName()
 
 void ResponderUnit::setState(UnitState *newState)
 {
+	if (currentState != nullptr) {
+        delete currentState; // Prevent memory leak of old state
+	}
 	std::cout << "Changing state to: " << newState->getStateName() << std::endl;
 	currentState = newState;
 }
@@ -43,6 +47,7 @@ ResponderUnit::~ResponderUnit()
 {
 	if (currentState != nullptr)
 		delete currentState;
+		currentState = nullptr;
 }
 
 Iterator *ResponderUnit::createIterator(std::string TraversalType)

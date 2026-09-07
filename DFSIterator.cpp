@@ -3,6 +3,7 @@
 
 DFSIterator::DFSIterator(ResponderComponent *root)
 {
+	currentIndex = 0;
 	if (root != nullptr)
 	{
 		collect(root); // start the traversal
@@ -11,16 +12,11 @@ DFSIterator::DFSIterator(ResponderComponent *root)
 
 bool DFSIterator::hasNext()
 {
-	if (!components.empty())
-	{
-		if (components[currentIndex + 1] != nullptr)
-		{
-			return true;
-		}
-	}
-	return false;
+	return currentIndex < components.size();
 }
-
+DFSIterator::~DFSIterator()
+{
+}
 ResponderComponent *DFSIterator::next()
 {
 	if (!hasNext())
@@ -33,6 +29,9 @@ ResponderComponent *DFSIterator::next()
 
 void DFSIterator::collect(ResponderComponent *node)
 {
+	if (node == nullptr){
+		return;
+	}
 	components.push_back(node);
 	for (ResponderComponent *child : node->getChildrenForIteration())
 	{

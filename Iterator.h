@@ -14,6 +14,8 @@ public:
 	virtual bool hasNext() = 0;
 
 	virtual ResponderComponent *next() = 0;
+
+	virtual ~Iterator(){};
 };
 
 #endif
