@@ -20,7 +20,9 @@ void scenario2();
 
 int main()
 {
+    std::cout << "----- SCENARIO 1 -----\n ";
     scenario1();
+    std::cout << "\n----- SCENARIO 2 -----\n ";
     scenario2();
     return 0;
 }
