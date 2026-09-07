@@ -34,7 +34,7 @@ UnitState *ResponderUnit::getCurrentState()
 
 std::vector<ResponderComponent *> ResponderUnit::getChildrenForIteration()
 {
-	return nullptr;
+	return children;
 }
 
 ResponderUnit::~ResponderUnit()

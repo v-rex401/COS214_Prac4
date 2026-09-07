@@ -12,6 +12,7 @@ class ResponderUnit : public ResponderComponent
 private:
 	std::string name;
 	UnitState *currentState;
+	std::vector<ResponderComponent *> children;
 
 public:
 	ResponderUnit(std::string name);
