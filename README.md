@@ -1,8 +1,8 @@
 # COS214_Prac4
 
-- Njabulo
-- Rayhaan
 - Vashti Pillay - u25041887
+- Njabulo Nhlengethwa - u24981712
+- Rayhaan Ahmed
 
 ## 1. Docker Instructions
 
