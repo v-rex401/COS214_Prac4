@@ -8,9 +8,8 @@
 
 1. Run `docker build -t taskforge . ` in the terminal
 
-2. Run `docker run -rm -it taskforge bash`
+2. Run `docker run -it taskforge bash`
 
-- -rm - deletes container when it exits
 - -i - interactive, keeps stdin open to write commands in container
 - -t - Get a command prompt
 - bash - tell docker to launch Bash shell
