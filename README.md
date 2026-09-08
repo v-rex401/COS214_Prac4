@@ -2,7 +2,7 @@
 
 - Vashti Pillay - u25041887
 - Njabulo Nhlengethwa - u24981712
-- Rayhaan Ahmed
+- Rayhaan Ahmed - u25047762
 
 ## 1. Docker Instructions
 
